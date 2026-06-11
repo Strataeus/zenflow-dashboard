@@ -1,19 +1,32 @@
-# ZenFlow — Votre Espace de Productivité et Concentration
+# FAST Flow — Hub de Diagnostic & Interventions
 
-ZenFlow est un tableau de bord web de productivité et de bien-être personnel, conçu pour vous aider à rester concentré, à organiser vos tâches quotidiennes et à suivre votre humeur.
+FAST Flow est un tableau de bord web professionnel conçu sur mesure pour **FAST Tech Services** (maintenance, dépannage et installation d'équipements de garages automobiles et ateliers industriels). 
 
-## Fonctionnalités
+Il permet aux clients d'effectuer un pré-diagnostic rapide en cas de panne et aux techniciens de suivre et gérer l'état des tickets d'interventions en temps réel.
 
-- **Interface Glassmorphic Moderne** : Un design sombre élégant avec des transparences, des reflets et des dégradés animés fluides.
-- **Minuteur Pomodoro** : Alternance entre sessions de travail (25 min) et pauses (5 min / 15 min) avec un indicateur visuel circulaire.
-- **Sons d'Ambiance Intégrés (Web Audio API)** : Générateur audio de bruit de pluie, vagues de l'océan et bruit blanc synthétisés en temps réel directement par le navigateur.
-- **ZenDo (Gestionnaire de Tâches)** : Ajoutez, supprimez et complétez vos tâches du jour avec sauvegarde automatique locale.
-- **Suivi du Bien-être** : Enregistrez votre humeur quotidienne et observez vos tendances sur un graphique interactif représentant l'historique des 7 derniers jours.
+## Fonctionnalités principales
 
-## Technologies utilisées
+1. **Assistant FAST Remote (Télé-Diagnostic)** :
+   - Un arbre de décision interactif guidant l'utilisateur à travers une série de questions ciblées selon l'équipement défaillant (*Pont élévateur*, *Cabine de peinture*, *Compresseur*, *Station de lavage*).
+   - Fournit un pré-diagnostic technique immédiat (ex: manque d'huile hydraulique, défaut de pressostat, colmatage des filtres) et une action recommandée.
+   - Permet de générer instantanément un ticket d'intervention à partir du résultat du diagnostic.
 
-- **HTML5** & **CSS3** (Variables CSS, Flexbox/Grid, Animations de flou d'arrière-plan)
-- **JavaScript (ES6)**
-- **Web Audio API** (Synthèse sonore)
-- **SVG** (Dessin vectoriel dynamique)
-- **LocalStorage** (Sauvegarde automatique sans base de données externe)
+2. **Gestionnaire de Tickets d'Intervention** :
+   - Suivi en temps réel des demandes avec différents niveaux de gravité (Basse, Moyenne, Critique avec indicateurs visuels pulsés).
+   - Modification rapide du statut des interventions (*Nouveau*, *En Diag*, *Planifié*, *Résolu*) directement depuis l'interface.
+   - Persistance locale des données via `localStorage`.
+
+3. **Minuteur de Procédure** :
+   - Utilisé par les techniciens pour minuter les cycles de test et procédures d'entretien (ex: contrôle de sécurité des ponts, cycles de séchage cabine).
+   - Indicateur visuel circulaire réactif et alarme sonore synthétisée via la **Web Audio API**.
+
+4. **Indicateurs d'Activité & Générateur d'Ambiance** :
+   - Graphique SVG d'historique dynamique affichant le volume d'interventions résolues au cours des 7 derniers jours.
+   - Générateur de sons d'ambiance d'atelier (bruit rose de calme et ondes de concentration) pour accompagner le travail administratif ou technique.
+
+## Déploiement
+
+- **Langages** : HTML5, CSS3 (variables CSS, glassmorphisme), JavaScript ES6.
+- **Synthèse sonore** : Web Audio API (génération de signaux en temps réel sans fichiers audio externes).
+- **Graphiques** : Dessin vectoriel dynamique (SVG).
+- **Sans base de données externe** : Stockage local instantané et sécurisé.
