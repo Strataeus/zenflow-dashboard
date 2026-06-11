@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZenFlow — Votre Espace de Productivité et Concentration</title>
+    <title>FAST Flow — Hub de Diagnostic & Interventions</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,27 +25,94 @@
         <header class="app-header">
             <div class="logo-area">
                 <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="12" cy="12" r="10" stroke="url(#logo-grad)" stroke-width="2.5"/>
-                    <path d="M12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17C14.7614 17 17 14.7614 17 12" stroke="url(#logo-grad)" stroke-width="2.5" stroke-linecap="round"/>
-                    <path d="M12 10C10.8954 10 10 10.8954 10 12C10 13.1046 10.8954 14 12 14C13.1046 14 14 13.1046 14 12" stroke="url(#logo-grad)" stroke-width="2.5" stroke-linecap="round"/>
+                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="url(#logo-grad)" stroke="url(#logo-grad)" stroke-width="1" stroke-linejoin="round"/>
                     <defs>
-                        <linearGradient id="logo-grad" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#a855f7"/>
-                            <stop offset="1" stop-color="#06b6d4"/>
+                        <linearGradient id="logo-grad" x1="3" y1="2" x2="21" y2="22" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#06b6d4"/>
+                            <stop offset="1" stop-color="#3b82f6"/>
                         </linearGradient>
                     </defs>
                 </svg>
-                <h1 id="app-title">ZenFlow</h1>
+                <h1 id="app-title">FAST Flow</h1>
             </div>
-            <p class="tagline">Trouvez votre rythme. Restez concentré.</p>
+            <p class="tagline">FAST Tech Services — Hub de Diagnostic & Interventions</p>
         </header>
 
         <!-- DASHBOARD GRID -->
         <main class="dashboard-grid">
-            <!-- SECTION 1: POMODORO TIMER -->
-            <section class="card pomodoro-card" id="pomodoro-section">
+            
+            <!-- COLUMN 1: FAST REMOTE DIAGNOSTIC ASSISTANT -->
+            <section class="card diagnostic-card" id="diagnostic-section">
                 <div class="card-header">
-                    <h2>Concentration</h2>
+                    <div>
+                        <h2>Assistant FAST Remote</h2>
+                        <p class="subtitle">Pré-diagnostic de panne en temps réel</p>
+                    </div>
+                    <span class="badge status-active">Actif</span>
+                </div>
+
+                <!-- Step 1: Equipment Selection -->
+                <div class="diag-container" id="diag-step-select">
+                    <p class="diag-prompt">Sélectionnez le type d'équipement en panne :</p>
+                    <div class="equip-selector">
+                        <button class="equip-btn" data-equip="pont">
+                            <span class="equip-icon">🏋️</span>
+                            <span class="equip-label">Pont élévateur</span>
+                        </button>
+                        <button class="equip-btn" data-equip="cabine">
+                            <span class="equip-icon">💨</span>
+                            <span class="equip-label">Cabine de peinture</span>
+                        </button>
+                        <button class="equip-btn" data-equip="compresseur">
+                            <span class="equip-icon">🌀</span>
+                            <span class="equip-label">Compresseur & Air</span>
+                        </button>
+                        <button class="equip-btn" data-equip="lavage">
+                            <span class="equip-icon">🚿</span>
+                            <span class="equip-label">Station de lavage</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Diagnostic Questions (Hidden initially) -->
+                <div class="diag-container hidden" id="diag-step-question">
+                    <div class="diag-progress-bar"><div class="diag-progress-fill" id="diag-progress"></div></div>
+                    <p class="diag-question-text" id="diag-question-text">Question...</p>
+                    <div class="diag-choices">
+                        <button class="choice-btn btn-yes" id="btn-choice-yes">Oui</button>
+                        <button class="choice-btn btn-no" id="btn-choice-no">Non</button>
+                    </div>
+                    <button class="diag-back-btn" id="btn-diag-back">← Retour</button>
+                </div>
+
+                <!-- Step 3: Diagnostic Results (Hidden initially) -->
+                <div class="diag-container hidden" id="diag-step-result">
+                    <div class="result-box">
+                        <span class="result-icon" id="result-icon">⚠️</span>
+                        <h3 id="result-title">Diagnostic Qualifié</h3>
+                        <p class="result-text" id="result-text">Description du problème suspecté...</p>
+                        <div class="action-box">
+                            <p class="action-title">Action recommandée :</p>
+                            <p class="action-text" id="result-action">Étape à suivre...</p>
+                        </div>
+                    </div>
+                    <div class="diag-result-actions">
+                        <button class="control-btn primary" id="btn-create-ticket-from-diag">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="15" y2="15"></line></svg>
+                            Ouvrir un ticket d'intervention
+                        </button>
+                        <button class="control-btn secondary" id="btn-diag-reset">Nouveau Diagnostic</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- COLUMN 2: TEST & MAINTENANCE TIMER -->
+            <section class="card pomodoro-card" id="timer-section">
+                <div class="card-header">
+                    <div>
+                        <h2>Minuteur de Test</h2>
+                        <p class="subtitle">Chronophage de procédures & cycles</p>
+                    </div>
                     <span class="badge" id="timer-status">Prêt</span>
                 </div>
                 
@@ -55,14 +122,14 @@
                         <circle class="timer-progress" id="timer-progress-ring" cx="100" cy="100" r="85" stroke-width="8" stroke-dasharray="534" stroke-dashoffset="0" stroke-linecap="round"/>
                     </svg>
                     <div class="timer-text-overlay">
-                        <span id="time-display">25:00</span>
+                        <span id="time-display">15:00</span>
                     </div>
                 </div>
 
                 <div class="timer-modes">
-                    <button class="mode-btn active" id="mode-work" data-time="1500">Travail</button>
-                    <button class="mode-btn" id="mode-short" data-time="300">Pause Courte</button>
-                    <button class="mode-btn" id="mode-long" data-time="900">Pause Longue</button>
+                    <button class="mode-btn active" id="mode-work" data-time="900">Test Pont (15m)</button>
+                    <button class="mode-btn" id="mode-short" data-time="1800">Séchage Cabine (30m)</button>
+                    <button class="mode-btn" id="mode-long" data-time="600">Diag Rapide (10m)</button>
                 </div>
 
                 <div class="timer-controls">
@@ -80,115 +147,64 @@
                 </div>
             </section>
 
-            <!-- SECTION 2: AMBIENT SOUNDS -->
-            <section class="card ambient-card" id="ambient-section">
+            <!-- COLUMN 3: TICKET MANAGER -->
+            <section class="card tasks-card" id="tickets-section">
                 <div class="card-header">
-                    <h2>Sons d'Ambiance</h2>
-                    <p class="subtitle">Améliorez votre focus</p>
-                </div>
-                
-                <div class="ambient-controls">
-                    <!-- Rain Sound -->
-                    <div class="sound-control-row">
-                        <button class="sound-toggle-btn" id="toggle-rain" data-sound="rain">
-                            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M16 13a4 4 0 0 1-8 0V6a4 4 0 0 1 8 0v7z"></path>
-                                <path d="M8 19h8"></path>
-                                <line x1="12" y1="19" x2="12" y2="22"></line>
-                            </svg>
-                            <span>Pluie apaisante</span>
-                        </button>
-                        <input type="range" class="volume-slider" id="volume-rain" min="0" max="1" step="0.05" value="0.5" disabled>
+                    <div>
+                        <h2>Tickets d'Intervention</h2>
+                        <p class="subtitle">Gestion des demandes clients</p>
                     </div>
-
-                    <!-- Ocean Waves -->
-                    <div class="sound-control-row">
-                        <button class="sound-toggle-btn" id="toggle-ocean" data-sound="ocean">
-                            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-                            </svg>
-                            <span>Vagues de l'océan</span>
-                        </button>
-                        <input type="range" class="volume-slider" id="volume-ocean" min="0" max="1" step="0.05" value="0.5" disabled>
-                    </div>
-
-                    <!-- White Noise -->
-                    <div class="sound-control-row">
-                        <button class="sound-toggle-btn" id="toggle-white" data-sound="white">
-                            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-                                <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-                            </svg>
-                            <span>Bruit blanc</span>
-                        </button>
-                        <input type="range" class="volume-slider" id="volume-white" min="0" max="1" step="0.05" value="0.3" disabled>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SECTION 3: ZEN DO (TASK LIST) -->
-            <section class="card tasks-card" id="tasks-section">
-                <div class="card-header">
-                    <h2>ZenDo</h2>
-                    <span class="badge" id="task-counter">0 / 0</span>
+                    <span class="badge" id="task-counter">0 résolus / 0 total</span>
                 </div>
 
-                <form class="task-form" id="task-form">
-                    <input type="text" id="task-input" placeholder="Ajouter une nouvelle tâche..." required maxlength="60">
-                    <button type="submit" class="add-task-btn" id="btn-add-task">
-                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                    </button>
+                <form class="ticket-form" id="ticket-form">
+                    <div class="form-row">
+                        <input type="text" id="ticket-client" placeholder="Nom du Client (ex: Garage du Centre)" required maxlength="40">
+                        <select id="ticket-equip" required>
+                            <option value="" disabled selected>Équipement</option>
+                            <option value="Pont élévateur">Pont élévateur</option>
+                            <option value="Cabine de peinture">Cabine de peinture</option>
+                            <option value="Compresseur & Air">Compresseur & Air</option>
+                            <option value="Station de lavage">Station de lavage</option>
+                        </select>
+                        <select id="ticket-gravity" required>
+                            <option value="minor" selected>Gravité : Basse</option>
+                            <option value="medium">Gravité : Moyenne</option>
+                            <option value="critical">Gravité : Critique</option>
+                        </select>
+                        <button type="submit" class="add-task-btn" id="btn-add-ticket" title="Ajouter le ticket">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </button>
+                    </div>
                 </form>
 
                 <div class="task-filters">
-                    <button class="filter-btn active" data-filter="all">Toutes</button>
-                    <button class="filter-btn" data-filter="active">Actives</button>
-                    <button class="filter-btn" data-filter="completed">Faites</button>
+                    <button class="filter-btn active" data-filter="all">Tous</button>
+                    <button class="filter-btn" data-filter="new">Nouveau</button>
+                    <button class="filter-btn" data-filter="diagnostic">En Diag</button>
+                    <button class="filter-btn" data-filter="scheduled">Planifié</button>
+                    <button class="filter-btn" data-filter="resolved">Résolu</button>
                 </div>
 
                 <div class="tasks-list-container">
-                    <ul class="tasks-list" id="tasks-list">
-                        <!-- Tâches insérées en JS -->
+                    <ul class="tasks-list" id="tickets-list">
+                        <!-- Tickets insérés en JS -->
                     </ul>
                 </div>
             </section>
 
-            <!-- SECTION 4: MOOD & HABIT LOGGER -->
-            <section class="card mood-card" id="mood-section">
+            <!-- COLUMN 4: PERFORMANCE & AMBIENT -->
+            <section class="card mood-card" id="stats-section">
                 <div class="card-header">
-                    <h2>Suivi du Bien-être</h2>
-                    <p class="subtitle">Comment vous sentez-vous aujourd'hui ?</p>
-                </div>
-
-                <div class="mood-selector">
-                    <button class="mood-btn" data-mood="5" title="Excellent">
-                        <span class="emoji">✨</span>
-                        <span class="mood-label">Génial</span>
-                    </button>
-                    <button class="mood-btn" data-mood="4" title="Bien">
-                        <span class="emoji">😊</span>
-                        <span class="mood-label">Bien</span>
-                    </button>
-                    <button class="mood-btn" data-mood="3" title="Neutre">
-                        <span class="emoji">😐</span>
-                        <span class="mood-label">Neutre</span>
-                    </button>
-                    <button class="mood-btn" data-mood="2" title="Fatigué">
-                        <span class="emoji">🥱</span>
-                        <span class="mood-label">Fatigué</span>
-                    </button>
-                    <button class="mood-btn" data-mood="1" title="Stressé">
-                        <span class="emoji">😰</span>
-                        <span class="mood-label">Stressé</span>
-                    </button>
+                    <div>
+                        <h2>Activité de FAST Flow</h2>
+                        <p class="subtitle">Interventions résolues (7 derniers jours)</p>
+                    </div>
                 </div>
 
                 <div class="chart-container">
-                    <h3 class="chart-title">Historique d'Humeur (7 derniers jours)</h3>
                     <div class="chart-svg-wrapper">
                         <svg class="mood-chart" id="mood-chart-svg" viewBox="0 0 500 180">
-                            <!-- Graphique dessiné dynamiquement en JS -->
                             <g class="grid-lines"></g>
                             <path class="chart-line" d="" fill="none" stroke="url(#chart-grad)" stroke-width="4" stroke-linecap="round"/>
                             <path class="chart-area" d="" fill="url(#chart-area-grad)"/>
@@ -197,14 +213,41 @@
                             <defs>
                                 <linearGradient id="chart-grad" x1="0" y1="0" x2="1" y2="0">
                                     <stop offset="0%" stop-color="#06b6d4" />
-                                    <stop offset="100%" stop-color="#a855f7" />
+                                    <stop offset="100%" stop-color="#3b82f6" />
                                 </linearGradient>
                                 <linearGradient id="chart-area-grad" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.3" />
-                                    <stop offset="100%" stop-color="#a855f7" stop-opacity="0.0" />
+                                    <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.35" />
+                                    <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.0" />
                                 </linearGradient>
                             </defs>
                         </svg>
+                    </div>
+                </div>
+
+                <div class="ambient-sound-subcard">
+                    <h3 class="sound-title">Générateur d'Ambiance Atelier</h3>
+                    <div class="ambient-controls">
+                        <!-- Rain Sound -->
+                        <div class="sound-control-row">
+                            <button class="sound-toggle-btn" id="toggle-rain" data-sound="rain">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 2v2M4.93 4.93l1.41 1.41M2 12h2M6.34 17.66l-1.41 1.41M12 20v2M17.66 17.66l1.41 1.41M20 12h2M19.07 4.93l-1.41 1.41"></path>
+                                </svg>
+                                <span>Bruit Rose (Calme)</span>
+                            </button>
+                            <input type="range" class="volume-slider" id="volume-rain" min="0" max="1" step="0.05" value="0.4" disabled>
+                        </div>
+
+                        <!-- Ocean Waves -->
+                        <div class="sound-control-row">
+                            <button class="sound-toggle-btn" id="toggle-ocean" data-sound="ocean">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                                </svg>
+                                <span>Cycle Ondes (Concentration)</span>
+                            </button>
+                            <input type="range" class="volume-slider" id="volume-ocean" min="0" max="1" step="0.05" value="0.5" disabled>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -212,7 +255,7 @@
 
         <!-- FOOTER -->
         <footer class="app-footer">
-            <p>ZenFlow Dashboard — Développé pour votre équilibre quotidien.</p>
+            <p>FAST Flow v1.1 — Outil interne réservé à FAST Tech Services et ses clients.</p>
         </footer>
     </div>
 </body>
